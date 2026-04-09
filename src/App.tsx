@@ -5,6 +5,7 @@ import Kasir from "./pages/KasirPage";
 import NotFound from "./pages/NotFoundPage";
 import Navbar from "./components/Navbar";
 
+
 function App() {
   return (
     <>

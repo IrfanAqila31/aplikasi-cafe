@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
-
-
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-stone-50);
+    color: var(--color-stone-800);
+    -webkit-font-smoothing: antialiased;
+  }
+}
 /* .counter {
   font-size: 16px;
   padding: 5px 10px;
