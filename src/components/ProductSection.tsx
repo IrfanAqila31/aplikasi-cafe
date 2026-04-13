@@ -1,13 +1,17 @@
 import { menuData } from "../data/Menu";
-// "Hei, menuData itu kan data sungguhan, sedangkan Product itu cuma aturan tipe (interface). 
+// "Hei, menuData itu kan data sungguhan, sedangkan Product itu cuma aturan tipe (interface).
 // Tolong pisahkan atau beri tanda mana yang cuma tipe, biar nanti mesin tidak bingung saat menerjemahkannya ke JavaScript biasa."
 import type { Product } from "../data/Menu";
 import { motion } from "framer-motion";
 
-const ProductSection = () => {
+interface ProductSectionProps {
+  onAddToCart: (harga: number) => void;
+}
+
+const ProductSection = ({ onAddToCart }: ProductSectionProps) => {
   return (
     <section id="menu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <motion.div 
+      <motion.div
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -41,7 +45,9 @@ const ProductSection = () => {
             {/* teks dinamis */}
             <div className="p-8 flex flex-col grow">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-stone-900 tracking-tight">{item.name}</h3>
+                <h3 className="text-2xl font-bold text-stone-900 tracking-tight">
+                  {item.name}
+                </h3>
                 <span className="bg-amber-50 text-amber-700 border border-amber-200/60 text-xs font-semibold px-3 py-1 rounded-full">
                   {item.category}
                 </span>
@@ -54,7 +60,11 @@ const ProductSection = () => {
                 <span className="text-2xl font-black text-amber-600">
                   Rp {item.price.toLocaleString("id-ID")}
                 </span>
-                <button className="bg-stone-900 text-white px-6 py-2.5 rounded-full hover:bg-stone-800 transition-all font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                <button
+                  type="button"
+                  onClick={() => onAddToCart(item.price)}
+                  className="bg-stone-900 text-white px-6 py-2.5 rounded-full hover:bg-stone-800 transition-all font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                >
                   Pesan
                 </button>
               </div>

@@ -7,7 +7,7 @@ const FloatingCart = ({ totalItem, totalHarga }: FloatingCartProps) => {
   if (totalItem === 0) return null;
   return (
     //Menggunakan <aside> untuk konten tambahan yang terpisah dari alur utama dokumen
-    <aside className="fixed bottom left1/2 -translate-x-1/2 w-11/12 max-w-md z-50">
+    <aside className="fixed bottom-8 left-1/2 -translate-x-1/2 w-11/12 max-w-md z-50">
       {/* Menggunakan <button> karena elemen ini interaktif, dan menambahkan aria-label untuk alat bantu baca (Screen Reader) */}
       <button
         type="button"
