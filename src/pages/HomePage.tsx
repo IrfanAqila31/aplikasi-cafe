@@ -1,27 +1,29 @@
-
-
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ProductSection from "../components/ProductSection";
 import Footer from "../components/Footer";
-import FloatingCart from "../components/FloatingCart";
+import type { CartItem } from "../types/cart";
+import type { Product } from "../data/Menu";
 
-//Buat antarmuka (interface) untuk menerima Props dari App.tsx
 interface HomeProps {
-  totalItem: number;
-  totalHarga: number;
-  onAddToCart: (harga: number) => void;
+  cartItems: CartItem[];
+  onAddItem: (product: Product) => void;
+  onRemoveItem: (productId: number) => void;
 }
 
-const Home = ({ totalItem, totalHarga, onAddToCart }: HomeProps) => {
+const Home = ({ cartItems, onAddItem, onRemoveItem }: HomeProps) => {
   return (
     <main>
       <HeroSection />
       <AboutSection />
-      <ProductSection onAddToCart={onAddToCart} />
+      <ProductSection
+        cartItems={cartItems}
+        onAddItem={onAddItem}
+        onRemoveItem={onRemoveItem}
+      />
       <Footer />
-      <FloatingCart totalItem={totalItem} totalHarga={totalHarga} />
     </main>
   );
 };
+
 export default Home;

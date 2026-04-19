@@ -1,38 +1,56 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Routes, Route } from "react-router";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import Kasir from "./pages/KasirPage";
 import NotFound from "./pages/NotFoundPage";
 import Navbar from "./components/Navbar";
-import CheckoutPage from "./pages/CheckoutPage"; 
+import CheckoutPage from "./pages/CheckoutPage";
+import type { CartItem } from "./types/cart";
+import { addItem, removeItem, getTotalItem } from "./utils/cartUtils";
+import type { Product } from "./data/Menu";
 
 function App() {
-  // 1. Memori keranjang disini
-  const [totalItem, setTotalItem] = useState(0);
-  const [totalHarga, setTotalHarga] = useState(0);
+  // CartState berbasis array CartItem[]
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  // 2. Fungsi remot kontrolnya disini
-  const handleTambahPesanan = (harga: number) => {
-    setTotalItem((prev) => prev + 1);
-    setTotalHarga((prev) => prev + harga);
+  // Derived values dihitung dari cartItems
+  const totalItem = useMemo(() => getTotalItem(cartItems), [cartItems]);
+
+  // Handler menggunakan pure functions dari cartUtils.ts
+  const handleAddItem = (product: Product) => {
+    setCartItems((prev) => addItem(prev, product));
   };
+
+  const handleRemoveItem = (productId: number) => {
+    setCartItems((prev) => removeItem(prev, productId));
+  };
+
   return (
     <>
-      <Navbar />
+      <Navbar totalItem={totalItem} />
       <Routes>
         <Route
           path="/"
           element={
             <HomePage
-              totalItem={totalItem}
-              totalHarga={totalHarga}
-              onAddToCart={handleTambahPesanan}
+              cartItems={cartItems}
+              onAddItem={handleAddItem}
+              onRemoveItem={handleRemoveItem}
             />
           }
         />
         <Route path="/kasir" element={<Kasir />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route
+          path="/checkout"
+          element={
+            <CheckoutPage
+              cartItems={cartItems}
+              onAddItem={handleAddItem}
+              onRemoveItem={handleRemoveItem}
+            />
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

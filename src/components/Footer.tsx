@@ -1,93 +1,102 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageSquare, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Mail, Phone, MessageSquare, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <motion.footer 
-      initial={{ opacity: 0, y: 30 }}
+    <motion.footer
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="bg-stone-950 text-stone-400 pt-20 pb-8 mt-auto border-t border-stone-800"
+      transition={{ duration: 0.7 }}
+      className="bg-[#2c1a0e] text-stone-400 border-t border-stone-800"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          
-          {/* Kolom 1: Brand & Tentang */}
-          <div className="col-span-1">
-            <h3 className="text-3xl font-extrabold text-white mb-4 tracking-tight">
-              Palora <span className="text-amber-600">Cafe</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 mb-12">
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="font-serif text-2xl font-bold text-amber-100 mb-3">
+              Palora <span className="text-amber-500">Cafe</span>
             </h3>
-            <p className="text-stone-500 text-sm leading-relaxed mb-6 pe-4">
-              Rumah bagi penikmat kopi otentik. Tempat persinggahan sejenak merajut cerita manis dengan cita rasa Nusantara premium pilihan para pakar. 
+            <p className="text-stone-500 text-sm leading-relaxed mb-6 max-w-xs">
+              Rumah bagi penikmat kopi otentik. Tempat merajut cerita hangat
+              dengan cita rasa Nusantara pilihan.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-all">
-                <Mail className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-all">
-                <Phone className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center hover:bg-amber-600 hover:text-white transition-all">
-                <MessageSquare className="w-5 h-5" />
-              </a>
+            <div className="flex gap-3">
+              {[Mail, Phone, MessageSquare].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-9 h-9 rounded-xl bg-stone-800 flex items-center justify-center hover:bg-amber-700 hover:text-amber-50 transition-all"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Kolom 2: Navigasi Singkat */}
-          <div className="col-span-1">
-            <h4 className="text-white font-bold text-lg mb-6">Jelajahi</h4>
+          {/* Navigasi */}
+          <div>
+            <h4 className="text-amber-100 font-semibold text-sm mb-5 uppercase tracking-wider">
+              Jelajahi
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { href: "#home", label: "Beranda" },
+                { href: "#about", label: "Tentang Kami" },
+                { href: "#menu", label: "Menu Kopi" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-stone-500 hover:text-amber-400 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Kontak */}
+          <div>
+            <h4 className="text-amber-100 font-semibold text-sm mb-5 uppercase tracking-wider">
+              Hubungi Kami
+            </h4>
             <ul className="space-y-4">
-              <li>
-                <a href="#home" className="hover:text-amber-500 transition-colors flex items-center gap-2 group cursor-pointer">
-                  <ArrowRight className="w-4 h-4 text-stone-600 group-hover:text-amber-500 transition-colors" /> Beranda
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-amber-500 transition-colors flex items-center gap-2 group cursor-pointer">
-                  <ArrowRight className="w-4 h-4 text-stone-600 group-hover:text-amber-500 transition-colors" /> Tentang Kami
-                </a>
-              </li>
-              <li>
-                <a href="#menu" className="hover:text-amber-500 transition-colors flex items-center gap-2 group cursor-pointer">
-                  <ArrowRight className="w-4 h-4 text-stone-600 group-hover:text-amber-500 transition-colors" /> Menu Kopi
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Kolom 3: Info & Kontak */}
-          <div className="col-span-1">
-            <h4 className="text-white font-bold text-lg mb-6">Hubungi Kami</h4>
-            <ul className="space-y-5">
-              <li className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <span className="text-sm">
-                  Jl. Majapahit No. 88, Mataram <br /> Nusa Tenggara Barat, Indonesia.
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <span className="text-sm text-stone-500">
+                  Jl. Majapahit No. 88, Mataram
+                  <br />
+                  Nusa Tenggara Barat
                 </span>
               </li>
-              <li className="flex items-start gap-4">
-                <Clock className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <span className="text-sm">
-                  Buka Setiap Hari <br /> <strong className="text-stone-300 font-medium">08.00 - 22.00 WITA</strong>
+              <li className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <span className="text-sm text-stone-500">
+                  Setiap Hari
+                  <br />
+                  <span className="text-stone-300 font-medium">
+                    08.00 – 22.00 WITA
+                  </span>
                 </span>
               </li>
             </ul>
           </div>
-
         </div>
 
-        {/* Bagian Bawah: Hak Cipta */}
-        <div className="pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-stone-500">
+        {/* Bottom */}
+        <div className="pt-6 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-600">
+          <p>
             &copy; {new Date().getFullYear()} Palora Cafe. Hak Cipta Dilindungi.
           </p>
-          <p className="text-stone-600">
-            Dibuat dengan <span className="text-amber-600 text-lg opacity-80">☕</span> oleh Irfan
+          <p>
+            Dibuat oleh{" "}
+            <span className="text-amber-700 font-medium">
+              Irfan Aqila Utama
+            </span>
           </p>
         </div>
-
       </div>
     </motion.footer>
   );
