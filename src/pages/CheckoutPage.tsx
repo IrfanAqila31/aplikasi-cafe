@@ -151,7 +151,7 @@ const CheckoutPage = ({
                   type="button"
                   onClick={handleKonfirmasi}
                   disabled={cartItems.length === 0}
-                  className="w-full bg-gradient-to-r from-amber-600 to-orange-700 text-amber-50 font-bold text-base sm:text-lg py-3.5 rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all shadow-[0_0_15px_rgba(217,119,6,0.3)] hover:shadow-[0_0_25px_rgba(217,119,6,0.5)] border border-amber-500/50 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  className="w-full bg-linear-to-r from-amber-600 to-orange-700 text-amber-50 font-bold text-base sm:text-lg py-3.5 rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all shadow-[0_0_15px_rgba(217,119,6,0.3)] hover:shadow-[0_0_25px_rgba(217,119,6,0.5)] border border-amber-500/50 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
                   Konfirmasi Pesanan
                 </button>

@@ -60,7 +60,7 @@ const AboutSection = () => {
             <div className="absolute bottom-6 left-6 bg-[#3d1d0c]/80 backdrop-blur-md border border-white/10 text-amber-400 px-4 py-2.5 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
               <p className="text-base font-bold leading-none drop-shadow-md">Sejak 2019</p>
               <p className="text-xs text-stone-300 mt-0.5">
-                Melayani dengan ❤️
+                Cita Rasa Otentik
               </p>
             </div>
           </motion.div>

@@ -76,7 +76,7 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
             <Link
               to="/checkout"
               aria-label={`Lihat pesanan, ${totalItem} item`}
-              className="flex items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-amber-50 font-semibold text-sm px-4 py-2.5 rounded-xl transition-all shadow-[0_0_15px_rgba(217,119,6,0.3)] hover:shadow-[0_0_25px_rgba(217,119,6,0.5)] hover:-translate-y-0.5"
+              className="flex items-center gap-2 bg-linear-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-amber-50 font-semibold text-sm px-4 py-2.5 rounded-xl transition-all shadow-[0_0_15px_rgba(217,119,6,0.3)] hover:shadow-[0_0_25px_rgba(217,119,6,0.5)] hover:-translate-y-0.5"
             >
               <svg
                 aria-hidden="true"

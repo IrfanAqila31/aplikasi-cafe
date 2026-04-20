@@ -62,7 +62,7 @@ const HeroSection = () => {
           >
             Momen Spesial
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 drop-shadow-[0_2px_10px_rgba(251,191,36,0.2)]">Dimulai Dari Sini</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-amber-400 to-amber-600 drop-shadow-[0_2px_10px_rgba(251,191,36,0.2)]">Dimulai Dari Sini</span>
           </motion.h1>
 
           <motion.p
@@ -79,7 +79,7 @@ const HeroSection = () => {
           >
             <a
               href="#menu"
-              className="group w-full sm:w-auto flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-600 to-orange-700 text-amber-50 px-7 py-3.5 rounded-xl text-base font-semibold hover:from-amber-500 hover:to-orange-600 transition-all shadow-[0_4px_20px_rgba(217,119,6,0.3)] hover:shadow-[0_6px_28px_rgba(217,119,6,0.5)] hover:-translate-y-0.5 border border-amber-500/50"
+              className="group w-full sm:w-auto flex items-center justify-center gap-2.5 bg-linear-to-r from-amber-600 to-orange-700 text-amber-50 px-7 py-3.5 rounded-xl text-base font-semibold hover:from-amber-500 hover:to-orange-600 transition-all shadow-[0_4px_20px_rgba(217,119,6,0.3)] hover:shadow-[0_6px_28px_rgba(217,119,6,0.5)] hover:-translate-y-0.5 border border-amber-500/50"
             >
               <Coffee className="w-4 h-4 opacity-90" />
               <span>Lihat Menu Kopi</span>
