@@ -8,7 +8,7 @@ const Footer = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      className="bg-[#2c1a0e] text-stone-400 border-t border-stone-800"
+      className="bg-[#231106] text-stone-400 border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 mb-12">
@@ -26,7 +26,7 @@ const Footer = () => {
                 <a
                   key={i}
                   href="#"
-                  className="w-9 h-9 rounded-xl bg-stone-800 flex items-center justify-center hover:bg-amber-700 hover:text-amber-50 transition-all"
+                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center hover:border-amber-500/50 hover:bg-white/10 hover:text-amber-400 hover:shadow-[0_0_15px_rgba(217,119,6,0.2)] transition-all"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -86,13 +86,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-6 border-t border-stone-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-600">
+        <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-500">
           <p>
             &copy; {new Date().getFullYear()} Palora Cafe. Hak Cipta Dilindungi.
           </p>
           <p>
             Dibuat oleh{" "}
-            <span className="text-amber-700 font-medium">
+            <span className="text-amber-600 font-medium tracking-wide">
               Irfan Aqila Utama
             </span>
           </p>
