@@ -22,7 +22,7 @@ const ProductSection = ({
   const categories = [
     "Semua",
     "Kopi",
-    "Non Kopi",
+    "Aneka Minuman",
     "Roti",
     "Makanan Ringan",
     "Makanan Berat",
@@ -143,24 +143,29 @@ const ProductSection = ({
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                </div>
-
-                {/* Info */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2 mb-1">
-                    <h3 className="text-sm sm:text-base font-bold text-amber-50 leading-snug">
-                      {item.name}
-                    </h3>
-                    <span className="shrink-0 text-[10px] sm:text-xs font-semibold text-amber-300 bg-white/10 border border-white/10 px-2 py-0.5 rounded-md">
+                  {/* Kategori Overlay */}
+                  <div className="absolute bottom-1 left-1 sm:bottom-1.5 sm:left-1.5 z-10 pointer-events-none">
+                    <span className="block text-[8px] sm:text-[9px] font-semibold text-amber-100 bg-black/60 backdrop-blur-md border border-white/20 px-1.5 py-0.5 rounded shadow-sm tracking-wide">
                       {item.category}
                     </span>
                   </div>
+                </div>
+
+                {/* Info */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center py-1">
+                  <h3 className="text-sm sm:text-base font-bold text-amber-50 leading-snug mb-1">
+                    {item.name}
+                  </h3>
                   <p className="text-xs text-stone-400 leading-relaxed line-clamp-2 mb-2 hidden sm:block">
                     {item.description}
                   </p>
-                  <span className="text-base sm:text-lg font-bold text-amber-400">
-                    Rp {item.price.toLocaleString("id-ID")}
-                  </span>
+                  
+                  {/* Harga */}
+                  <div className="mt-auto">
+                    <span className="text-sm sm:text-base font-bold text-amber-400">
+                      Rp {item.price.toLocaleString("id-ID")}
+                    </span>
+                  </div>
                 </div>
 
                 {/* QuantityCounter */}
