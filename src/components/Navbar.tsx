@@ -12,8 +12,12 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
 
   const navLinks = [
     { href: "#home", label: "Beranda" },
-    { href: "#about", label: "Tentang Kami" },
-    { href: "#menu", label: "Pesan Menu" },
+    { href: "#promo", label: "Promo" },
+    { href: "#about", label: "Tentang" },
+    { href: "#menu", label: "Menu" },
+    { href: "#reservation", label: "Reservasi" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#location", label: "Lokasi" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -52,14 +56,14 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-4">
-            <ul className="flex items-center gap-1 lg:gap-2">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+            <ul className="flex items-center gap-0.5 lg:gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="px-3 py-2 rounded-lg text-sm font-medium text-stone-300 hover:text-amber-400 hover:bg-white/5 transition-all cursor-pointer"
+                    className="px-2.5 py-1.5 rounded-lg text-[13px] lg:text-sm font-medium text-stone-300 hover:text-amber-400 hover:bg-white/5 transition-all cursor-pointer"
                   >
                     {link.label}
                   </a>
@@ -99,8 +103,8 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
             </Link>
           </div>
 
-          {/* Mobile */}
-          <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Layout (Visible up to md screens) */}
+          <div className="flex lg:hidden items-center gap-2">
             <Link
               to="/checkout"
               aria-label={`Lihat pesanan, ${totalItem} item`}
@@ -133,70 +137,71 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label="Buka menu navigasi"
               aria-expanded={menuOpen}
-              className="p-2 rounded-xl hover:bg-white/5 transition-colors text-amber-50"
+              className="relative p-2 w-10 h-10 rounded-xl hover:bg-white/5 transition-colors text-amber-50 flex items-center justify-center overflow-hidden"
             >
-              {menuOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              )}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className={`absolute w-6 h-6 transition-all duration-300 transform ${
+                  menuOpen ? "opacity-0 scale-50 -rotate-90" : "opacity-100 scale-100 rotate-0"
+                }`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className={`absolute w-6 h-6 transition-all duration-300 transform ${
+                  menuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-50 rotate-90"
+                }`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           </div>
         </nav>
       </header>
 
       {/* Mobile Dropdown */}
-      {menuOpen && (
-        <>
-          <div
-            className="md:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
-            onClick={() => setMenuOpen(false)}
-          />
-          <div
-            className="md:hidden fixed top-[62px] left-3 right-3 z-40 rounded-2xl border border-white/10 bg-[#3d1d0c]/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-          >
-            <ul className="px-2 py-2 flex flex-col gap-0.5">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className="block px-4 py-3 rounded-xl font-medium text-stone-300 hover:bg-white/5 hover:text-amber-400 transition-colors cursor-pointer"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        </>
-      )}
+      <div
+        className={`lg:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMenuOpen(false)}
+      />
+      <div
+        className={`lg:hidden fixed top-[62px] left-3 right-3 z-40 rounded-2xl border border-white/10 bg-[#3d1d0c]/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-300 origin-top transform ${
+          menuOpen ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"
+        }`}
+      >
+        <ul className="px-2 py-2 flex flex-col gap-0.5">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="block px-4 py-3 rounded-xl font-medium text-stone-300 hover:bg-white/5 hover:text-amber-400 transition-colors cursor-pointer"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+        </ul>
+      </div>
     </>
   );
 };

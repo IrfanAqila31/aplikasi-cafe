@@ -16,7 +16,7 @@ export const menuData: Product[] = [
       "Espresso murni dipadukan dengan susu segar dan manisnya gula aren alami.",
     price: 20000,
     image:
-      "https://images.unsplash.com/photo-1593443320739-77f74939d0da?w=500&q=80",
+      "https://i.pinimg.com/736x/7f/94/20/7f94202f7ea02b30f68d6744ef580e2d.jpg",
     category: "Kopi",
   },
   {
@@ -26,7 +26,7 @@ export const menuData: Product[] = [
       "Paduan espresso murni dengan air es. Sangat segar dan cocok untuk cuaca panas.",
     price: 15000,
     image:
-      "https://images.unsplash.com/photo-1551030173-122aabc4489c?w=500&q=80",
+      "https://i.pinimg.com/736x/e9/89/ee/e989eeb048a4d59cf0393d4e9bf2b2b3.jpg",
     category: "Kopi",
   },
   {
@@ -36,7 +36,7 @@ export const menuData: Product[] = [
       "Espresso diseduh dengan susu *steamed* yang lembut, menghasilkan rasa seimbang.",
     price: 22000,
     image:
-      "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500&q=80",
+      "https://i.pinimg.com/736x/50/f1/7c/50f17c380525acf16c5ad8df185b1554.jpg",
     category: "Kopi",
   },
   {
@@ -46,7 +46,7 @@ export const menuData: Product[] = [
       "Kopi klasik italia dengan takaran espresso, susu, dan foam yang pas.",
     price: 22000,
     image:
-      "https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&q=80",
+      "https://i.pinimg.com/736x/63/9b/08/639b0874b7c1227a6c98cbeae656eba0.jpg",
     category: "Kopi",
   },
   {
@@ -56,7 +56,7 @@ export const menuData: Product[] = [
       "Paduan sirup karamel manis dan espresso murni. Pilihan favorit banyak orang.",
     price: 26000,
     image:
-      "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=500&q=80",
+      "https://i.pinimg.com/1200x/4a/8b/e1/4a8be1181973982ef71aca416448ff5e.jpg",
     category: "Kopi",
   },
   {
@@ -66,7 +66,7 @@ export const menuData: Product[] = [
       "Paduan rasa espresso dan cokelat belgia pekat, disajikan panas atau dingin.",
     price: 25000,
     image:
-      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&q=80",
+      "https://i.pinimg.com/1200x/91/a8/7d/91a87dab2603e8cf69be1ecd143cab5a.jpg",
     category: "Kopi",
   },
 
@@ -78,7 +78,7 @@ export const menuData: Product[] = [
       "Serbuk matcha premium jepang dipadukan dengan susu segar yang creamy.",
     price: 25000,
     image:
-      "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=500&q=80",
+      "https://i.pinimg.com/1200x/60/a6/be/60a6bed284124c0cfccbcb4d597b0b58.jpg",
     category: "Aneka Minuman",
   },
   {
@@ -88,7 +88,7 @@ export const menuData: Product[] = [
       "Cokelat belgia asli yang kaya rasa disajikan dingin untuk menyegarkan harimu.",
     price: 22000,
     image:
-      "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=500&q=80",
+      "https://i.pinimg.com/1200x/49/d2/1b/49d21be8b47cee64b48fbe15bdab109b.jpg",
     category: "Aneka Minuman",
   },
   {
@@ -98,7 +98,7 @@ export const menuData: Product[] = [
       "Minuman taro yang khas dan *creamy*. Manisnya pas, cocok untuk relaksasi.",
     price: 20000,
     image:
-      "https://images.unsplash.com/photo-1558024220-b4afce66b962?w=500&q=80",
+      "https://i.pinimg.com/1200x/95/95/75/9595752f6a294345dc18421d9e2666b2.jpg",
     category: "Aneka Minuman",
   },
   {
@@ -108,7 +108,7 @@ export const menuData: Product[] = [
       "Cita rasa *red velvet* cake dalam segelas minuman susu yang manis dan lezat.",
     price: 23000,
     image:
-      "https://images.unsplash.com/photo-1620189507963-39ac4d8a14b0?w=500&q=80",
+      "https://i.pinimg.com/1200x/79/32/df/7932dfbef93d100f08f0b495b6b0f565.jpg",
     category: "Aneka Minuman",
   },
   {
@@ -118,7 +118,7 @@ export const menuData: Product[] = [
       "Teh melati dingin yang diseduh dengan buah leci asli yang menyegarkan dahaga.",
     price: 20000,
     image:
-      "https://images.unsplash.com/photo-1556881286-fc6915169721?w=500&q=80",
+      "https://i.pinimg.com/736x/8d/43/37/8d4337f052681194d09bc7af73d93c44.jpg",
     category: "Aneka Minuman",
   },
   {
@@ -128,7 +128,7 @@ export const menuData: Product[] = [
       "Paduan teh hitam pekat dengan perasan jeruk lemon asli. Kaya vitamin C.",
     price: 18000,
     image:
-      "https://images.unsplash.com/photo-1497534446932-c925b458310e?w=500&q=80",
+      "https://i.pinimg.com/1200x/40/c9/a1/40c9a16ffdf683b5820d6b678e027ae4.jpg",
     category: "Aneka Minuman",
   },
 
@@ -140,7 +140,7 @@ export const menuData: Product[] = [
       "Roti croissant renyah dengan rasa mentega yang gurih. Pas untuk teman ngopi.",
     price: 20000,
     image:
-      "https://images.unsplash.com/photo-1555507036-ab1f40ce88ca?w=500&q=80",
+      "https://i.pinimg.com/1200x/fb/5a/7b/fb5a7b4a04fe90e7ad03b98c79d6e836.jpg",
     category: "Roti",
   },
   {
@@ -150,7 +150,7 @@ export const menuData: Product[] = [
       "Croissant autentik prancis dengan kepingan cokelat di dalamnya yang lumer.",
     price: 22000,
     image:
-      "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500&q=80",
+      "https://i.pinimg.com/1200x/65/0a/7b/650a7b0a594bce1cb4423149329745fa.jpg",
     category: "Roti",
   },
   {
@@ -160,7 +160,7 @@ export const menuData: Product[] = [
       "Croissant panggang bertabur irisan kacang almond panggang nan renyah ekstra.",
     price: 25000,
     image:
-      "https://images.unsplash.com/photo-1626082987179-8473ba758063?w=500&q=80",
+      "https://i.pinimg.com/236x/f8/36/3c/f8363c3279be605be78da26150646917.jpg",
     category: "Roti",
   },
   {
@@ -170,7 +170,7 @@ export const menuData: Product[] = [
       "Roti gulung *cinnamon* manis beraroma kayu manis dengan *glaze* lezat di atasnya.",
     price: 20000,
     image:
-      "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=500&q=80",
+      "https://i.pinimg.com/1200x/61/7c/70/617c70380bee4be660ab40ff02b5fedc.jpg",
     category: "Roti",
   },
   {
@@ -180,7 +180,7 @@ export const menuData: Product[] = [
       "Roti panggang yang diisi keju mozzarella lumer. Kesukaan segala usia.",
     price: 25000,
     image:
-      "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=500&q=80",
+      "https://i.pinimg.com/736x/11/e9/28/11e928e2b373f902e8b43dcb79e1e46e.jpg",
     category: "Roti",
   },
   {
@@ -190,7 +190,7 @@ export const menuData: Product[] = [
       "Kue basah lembut dengan taburan beri biru segar asli di setiap gigitan kecil.",
     price: 18000,
     image:
-      "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=500&q=80",
+      "https://i.pinimg.com/1200x/1c/41/e2/1c41e22d7076574154b7a6782aa948ef.jpg",
     category: "Roti",
   },
 
@@ -202,7 +202,7 @@ export const menuData: Product[] = [
       "Kentang goreng renyah dengan taburan bumbu gurih pilihan, disajikan dengan saus sambal.",
     price: 18000,
     image:
-      "https://images.unsplash.com/photo-1576106195259-2c700941ca5f?w=500&q=80",
+      "https://i.pinimg.com/736x/ee/bf/ea/eebfea0bf629ad744105ec5df0c2b01a.jpg",
     category: "Makanan Ringan",
   },
   {
@@ -212,7 +212,7 @@ export const menuData: Product[] = [
       "Tahu krispi yang ditumis dengan potongan cabai dan bawang putih yang harum.",
     price: 15000,
     image:
-      "https://images.unsplash.com/photo-1548818556-3c0542ab3c4b?w=500&q=80",
+      "https://i.pinimg.com/1200x/43/05/8a/43058aa88bd40f36f29d37b68ef957f4.jpg",
     category: "Makanan Ringan",
   },
   {
@@ -222,7 +222,7 @@ export const menuData: Product[] = [
       "Cincin bawang bombay berbalut tepung renyah bumbu ala barat spesial.",
     price: 20000,
     image:
-      "https://images.unsplash.com/photo-1639024471283-0351888251ad?w=500&q=80",
+      "https://i.pinimg.com/736x/ba/32/fc/ba32fc0b71b95205633a41f5ccdd1eb1.jpg",
     category: "Makanan Ringan",
   },
   {
@@ -232,7 +232,7 @@ export const menuData: Product[] = [
       "Sayap ayam goreng bumbu pedas manis *buffalo style*. Sangat pas untuk *sharing*.",
     price: 30000,
     image:
-      "https://images.unsplash.com/photo-1569058242253-1df250a6e355?w=500&q=80",
+      "https://i.pinimg.com/1200x/ec/8a/ee/ec8aee3d078af75d59d2065bb774903b.jpg",
     category: "Makanan Ringan",
   },
   {
@@ -242,7 +242,7 @@ export const menuData: Product[] = [
       "Keripik jagung khas meksiko berlumur saus keju pedas, *jalapeno*, dan daging sapi.",
     price: 35000,
     image:
-      "https://images.unsplash.com/photo-1582169505937-b9992bd01ed9?w=500&q=80",
+      "https://i.pinimg.com/736x/10/b7/07/10b7076561649cf63c0b4c7f281760db.jpg",
     category: "Makanan Ringan",
   },
   {
@@ -252,7 +252,7 @@ export const menuData: Product[] = [
       "Cumi goreng tepung empuk yang disajikan dengan *tartar sauce* lemon segar.",
     price: 35000,
     image:
-      "https://images.unsplash.com/photo-1631557026723-53d712ce6a84?w=500&q=80",
+      "https://i.pinimg.com/1200x/82/18/35/82183552a9adad429d834f4cee48a99c.jpg",
     category: "Makanan Ringan",
   },
 
@@ -284,7 +284,7 @@ export const menuData: Product[] = [
       "Potongan ayam digoreng krispi ditumis mentega, kecap manis, dan bawang bombay.",
     price: 35000,
     image:
-      "https://images.unsplash.com/photo-1626804475297-4160aeea1a55?w=500&q=80",
+      "https://i.pinimg.com/1200x/cd/90/a4/cd90a4bcc1ba8ef5a35e162b4ad3ab70.jpg",
     category: "Makanan Berat",
   },
   {
@@ -294,7 +294,7 @@ export const menuData: Product[] = [
       "Kari kental khas Jepang dilengkapi ayam fillet katsu krispi dan wortel cincang.",
     price: 42000,
     image:
-      "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=500&q=80",
+      "https://i.pinimg.com/1200x/23/8a/31/238a31eb9505fe66c6bcd853f7a3f95d.jpg",
     category: "Makanan Berat",
   },
   {
@@ -304,7 +304,7 @@ export const menuData: Product[] = [
       "Mie telur kenyal digoreng *smokey* dengan sayuran hijau, suwiran ayam, dan telor ceplok.",
     price: 30000,
     image:
-      "https://images.unsplash.com/photo-1613564834361-9436940a5a54?w=500&q=80",
+      "https://i.pinimg.com/1200x/0f/76/e8/0f76e8e797bf5d4e40f004475ffdbe16.jpg",
     category: "Makanan Berat",
   },
   {

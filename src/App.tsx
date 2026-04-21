@@ -14,7 +14,7 @@ import type { Product } from "./data/Menu";
 
 function App() {
   useEffect(() => {
-    AOS.init({ once: true, duration: 600, easing: "ease-out-cubic", offset: 100 });
+    AOS.init({ once: false, mirror: true, duration: 600, easing: "ease-out-cubic", offset: 100 });
   }, []);
 
   // CartState berbasis array CartItem[]

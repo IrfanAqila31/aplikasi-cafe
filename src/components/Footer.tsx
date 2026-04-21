@@ -35,11 +35,15 @@ const Footer = () => {
             <h4 className="text-amber-100 font-semibold text-sm mb-5 uppercase tracking-wider">
               Jelajahi
             </h4>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-y-3 gap-x-4">
               {[
                 { href: "#home", label: "Beranda" },
-                { href: "#about", label: "Tentang Kami" },
-                { href: "#menu", label: "Menu Kopi" },
+                { href: "#promo", label: "Promo" },
+                { href: "#about", label: "Tentang" },
+                { href: "#menu", label: "Menu" },
+                { href: "#reservation", label: "Reservasi" },
+                { href: "#faq", label: "FAQ" },
+                { href: "#location", label: "Lokasi" },
               ].map((link) => (
                 <li key={link.href}>
                   <a
@@ -62,7 +66,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                 <span className="text-sm text-stone-500">
-                  Jl. Majapahit No. 88, Mataram
+                  Jl. Raden Puguh Puyung, Lombok Tengah
                   <br />
                   Nusa Tenggara Barat
                 </span>
@@ -73,7 +77,9 @@ const Footer = () => {
                   Setiap Hari
                   <br />
                   <span className="text-stone-300 font-medium">
-                    08.00 – 22.00 WITA
+                    Senin - Jumat: 09.00 – 22.00 WITA
+                    <br />
+                    Sabtu - Minggu: 10.00 – 23.00 WITA
                   </span>
                 </span>
               </li>

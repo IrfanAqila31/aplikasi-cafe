@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { menuData } from "../data/Menu";
 import type { Product } from "../data/Menu";
 import type { CartItem } from "../types/cart";
@@ -17,7 +17,21 @@ const ProductSection = ({
 }: ProductSectionProps) => {
   const [activeCategory, setActiveCategory] = useState<string>("Semua");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(5);
+  const [visibleCount, setVisibleCount] = useState(6);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   const categories = [
     "Semua",
     "Kopi",
@@ -33,7 +47,10 @@ const ProductSection = ({
       : menuData.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="menu" className="relative overflow-hidden bg-[#2b1408] bg-grain">
+    <section
+      id="menu"
+      className="relative overflow-hidden bg-[#2b1408] bg-grain"
+    >
       {/* Background decorative */}
       <div className="absolute inset-0 bg-dots opacity-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -59,8 +76,14 @@ const ProductSection = ({
         </div>
 
         {/* Filter Categories */}
-        <div data-aos="fade-up" className="mb-8 flex justify-center sm:justify-start relative z-20">
-          <div className="relative inline-block w-full max-w-[200px] text-left">
+        <div
+          data-aos="fade-up"
+          className="mb-8 flex justify-center sm:justify-start relative z-20"
+        >
+          <div
+            className="relative inline-block w-full max-w-[200px] text-left"
+            ref={dropdownRef}
+          >
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="flex justify-between items-center w-full bg-[#3d1d0c]/90 backdrop-blur-md text-amber-50 font-bold text-sm px-5 py-3 rounded-2xl border border-white/10 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:border-amber-500/30 hover:shadow-[0_6px_20px_rgba(0,0,0,0.6)] hover:-translate-y-0.5 transition-all duration-200 ease-out cursor-pointer"
@@ -72,47 +95,36 @@ const ProductSection = ({
                 }`}
               />
             </button>
-            
-            {/* Backdrop for outside click */}
-            {isDropdownOpen && (
-              <div 
-                className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm" 
-                onClick={() => setIsDropdownOpen(false)} 
-                aria-label="Tutup dropdown kategori"
-              />
-            )}
-            
-              {isDropdownOpen && (
-                <div
-                  className="absolute z-50 left-0 right-0 mt-2 origin-top bg-[#3d1d0c]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.7)] overflow-hidden"
-                >
-                  <ul className="py-2">
-                    {categories.map((category) => (
-                      <li key={category}>
-                        <button
-                          onClick={() => {
-                            setActiveCategory(category);
-                            setIsDropdownOpen(false);
-                            setVisibleCount(5);
-                          }}
-                          className={`w-full text-left px-5 py-2.5 text-sm transition-colors duration-200 outline-none focus:bg-white/5 ${
-                            activeCategory === category
-                              ? "text-amber-400 bg-white/5 font-bold"
-                              : "text-stone-300 hover:bg-white/5 hover:text-amber-300 font-medium"
-                          }`}
-                        >
-                          {category}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+
+            <div
+              className={`absolute z-50 left-0 right-0 mt-2 origin-top bg-[#3d1d0c]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.7)] overflow-hidden transition-all duration-300 ${isDropdownOpen ? "opacity-100 scale-y-100 pointer-events-auto" : "opacity-0 scale-y-95 pointer-events-none"}`}
+            >
+              <ul className="py-2">
+                {categories.map((category) => (
+                  <li key={category}>
+                    <button
+                      onClick={() => {
+                        setActiveCategory(category);
+                        setIsDropdownOpen(false);
+                        setVisibleCount(6);
+                      }}
+                      className={`w-full text-left px-5 py-2.5 text-sm transition-colors duration-200 outline-none focus:bg-white/5 ${
+                        activeCategory === category
+                          ? "text-amber-400 bg-white/5 font-bold"
+                          : "text-stone-300 hover:bg-white/5 hover:text-amber-300 font-medium"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* List */}
-        <div className="flex flex-col gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 lg:gap-5">
           {filteredMenu.slice(0, visibleCount).map((item: Product) => {
             const quantity =
               cartItems.find((i) => i.id === item.id)?.quantity ?? 0;
@@ -146,7 +158,7 @@ const ProductSection = ({
                   <p className="text-xs text-stone-400 leading-relaxed line-clamp-2 mb-2 hidden sm:block">
                     {item.description}
                   </p>
-                  
+
                   {/* Harga */}
                   <div className="mt-auto">
                     <span className="text-sm sm:text-base font-bold text-amber-400">
@@ -192,7 +204,7 @@ const ProductSection = ({
         {visibleCount < filteredMenu.length && (
           <div data-aos="fade-up" className="flex justify-center mt-10">
             <button
-              onClick={() => setVisibleCount((prev) => prev + 5)}
+              onClick={() => setVisibleCount((prev) => prev + 6)}
               className="flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-md text-amber-50 border border-white/10 font-bold text-sm rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:border-amber-500/50 hover:text-amber-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden group"
             >
               <span className="relative z-10">Muat Lebih Banyak</span>

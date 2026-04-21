@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const LocationSection = () => {
   return (
-    <section className="py-16 sm:py-24 bg-[#211107] relative z-10 border-t border-white/5">
+    <section id="location" className="py-16 sm:py-24 bg-[#211107] relative z-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div data-aos="fade-up" className="text-center mb-12 lg:mb-16">
           <span className="inline-block text-xs font-semibold text-amber-300 bg-amber-900/30 border border-amber-500/20 px-3 py-1 rounded-full mb-4 tracking-wide uppercase">
@@ -32,7 +32,7 @@ const LocationSection = () => {
                 <div>
                   <h4 className="text-amber-100 font-semibold mb-1">Alamat</h4>
                   <p className="text-sm text-stone-400 leading-relaxed">
-                    Jl. Kopi Nusantara No. 99, Kecamatan Sedap, Kota Bahagia 12345
+                    Jl. Raden Puguh Puyung, Lombok Tengah, Nusa Tenggara Barat
                   </p>
                 </div>
               </div>
@@ -47,8 +47,8 @@ const LocationSection = () => {
                 </div>
                 <div>
                   <h4 className="text-amber-100 font-semibold mb-1">Jam Operasional</h4>
-                  <p className="text-sm text-stone-400">Senin - Jumat: 08.00 - 22.00</p>
-                  <p className="text-sm text-stone-400">Sabtu - Minggu: 07.00 - 23.00</p>
+                  <p className="text-sm text-stone-400">Senin - Jumat: 09.00 - 22.00</p>
+                  <p className="text-sm text-stone-400">Sabtu - Minggu: 10.00 - 23.00</p>
                 </div>
               </div>
 
@@ -76,7 +76,7 @@ const LocationSection = () => {
                 </div>
                 <div>
                   <h4 className="text-amber-100 font-semibold mb-1">Email</h4>
-                  <p className="text-sm text-stone-400">hello@paloracafe.com</p>
+                  <p className="text-sm text-stone-400">paloracafe@gmail.com</p>
                 </div>
               </div>
 
@@ -86,7 +86,7 @@ const LocationSection = () => {
           {/* Map Side */}
           <div data-aos="fade-left" className="w-full lg:w-2/3 h-[400px] lg:h-auto min-h-[400px] relative">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126938.83490796333!2d106.74418652435552!3d-6.229740134449833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              src="https://maps.google.com/maps?q=Jalan+Raden+Puguh,+Puyung,+Lombok+Tengah,+Nusa+Tenggara+Barat&t=&z=14&ie=UTF8&iwloc=&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

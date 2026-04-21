@@ -23,16 +23,13 @@ const promos = [
 
 const PromoSection = () => {
   return (
-    <section className="py-12 sm:py-20 bg-[#2b1408] border-b border-white/5 relative overflow-hidden">
+    <section id="promo" className="py-12 sm:py-20 bg-[#2b1408] border-b border-white/5 relative overflow-hidden">
       {/* Decorative blurry gradients */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-orange-700/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div
-          data-aos="fade-up"
-          className="text-center mb-12"
-        >
+        <div data-aos="fade-up" className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-amber-50 drop-shadow-[0_2px_10px_rgba(251,191,36,0.1)] mb-4">
             Penawaran Spesial
           </h2>
@@ -49,7 +46,7 @@ const PromoSection = () => {
                 key={promo.title}
                 data-aos="fade-up"
                 data-aos-delay={index * 150}
-                className="relative group bg-[#3d1d0c]/60 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:border-amber-500/30 transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+                className="relative overflow-hidden group bg-[#3d1d0c]/60 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:border-amber-500/30 transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
               >
                 {/* Accent line on top */}
                 <div
