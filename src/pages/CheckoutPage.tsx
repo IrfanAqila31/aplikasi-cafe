@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { Link } from "react-router";
-import { motion } from "framer-motion";
 import type { CartItem } from "../types/cart";
 import type { Product } from "../data/Menu";
 
@@ -100,11 +99,7 @@ const CheckoutPage = ({
       <div className="absolute bottom-0 -left-20 w-72 h-72 bg-orange-700/10 rounded-full blur-[90px] pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl mx-auto">
-        <motion.div
-          initial={{ y: 16, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4 }}
-        >
+        <div data-aos="fade-up">
           <h1 className="text-2xl sm:text-3xl font-bold text-amber-50 drop-shadow-sm mb-6">
             Ringkasan Pesanan
           </h1>
@@ -158,7 +153,7 @@ const CheckoutPage = ({
               </div>
             </>
           )}
-        </motion.div>
+        </div>
       </div>
     </main>
   );

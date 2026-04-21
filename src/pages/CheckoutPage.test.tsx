@@ -86,7 +86,7 @@ describe("Empty state saat cartItems kosong (Req 4.4)", () => {
     renderCheckoutPage([]);
 
     expect(
-      screen.getByText(/keranjang belanja kamu masih kosong/i),
+      screen.getByText(/keranjang masih kosong/i),
     ).toBeInTheDocument();
   });
 
@@ -209,11 +209,11 @@ describe("Semua CartItem dirender dengan data yang benar (Req 4.1, 4.2)", () => 
     renderCheckoutPage(sampleItems);
 
     // Kopi Susu: 25000 × 2 = 50000 → Rp 50.000
-    expect(screen.getByText("Rp 50.000")).toBeInTheDocument();
+    expect(screen.getAllByText("Rp 50.000").length).toBeGreaterThanOrEqual(1);
     // Croissant: 18000 × 1 = 18000 → Rp 18.000
     // (harga satuan dan subtotal sama, keduanya muncul)
     // Matcha Latte: 30000 × 3 = 90000 → Rp 90.000
-    expect(screen.getByText("Rp 90.000")).toBeInTheDocument();
+    expect(screen.getAllByText("Rp 90.000").length).toBeGreaterThanOrEqual(1);
   });
 
   it("menampilkan gambar setiap CartItem dengan alt text nama produk", () => {

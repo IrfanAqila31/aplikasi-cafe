@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { menuData } from "../data/Menu";
 import type { Product } from "../data/Menu";
-import { motion, AnimatePresence } from "framer-motion";
 import type { CartItem } from "../types/cart";
 import { ChevronDown } from "lucide-react";
 
@@ -43,11 +42,8 @@ const ProductSection = ({
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         {/* Header */}
-        <motion.div
-          initial={{ y: 24, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
+        <div
+          data-aos="fade-up"
           className="flex flex-col items-center mb-10 sm:mb-12 text-center"
         >
           <span className="inline-block text-xs font-semibold text-amber-300 bg-amber-900/30 border border-amber-500/20 px-3 py-1 rounded-full mb-4 tracking-wide uppercase">
@@ -60,10 +56,10 @@ const ProductSection = ({
             Dari espresso klasik hingga minuman signature, semua dibuat dengan
             bahan pilihan.
           </p>
-        </motion.div>
+        </div>
 
         {/* Filter Categories */}
-        <div className="mb-8 flex justify-center sm:justify-start relative z-20">
+        <div data-aos="fade-up" className="mb-8 flex justify-center sm:justify-start relative z-20">
           <div className="relative inline-block w-full max-w-[200px] text-left">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -86,13 +82,8 @@ const ProductSection = ({
               />
             )}
             
-            <AnimatePresence>
               {isDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
+                <div
                   className="absolute z-50 left-0 right-0 mt-2 origin-top bg-[#3d1d0c]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.7)] overflow-hidden"
                 >
                   <ul className="py-2">
@@ -115,25 +106,21 @@ const ProductSection = ({
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
           </div>
         </div>
 
         {/* List */}
         <div className="flex flex-col gap-3">
-          {filteredMenu.slice(0, visibleCount).map((item: Product, index: number) => {
+          {filteredMenu.slice(0, visibleCount).map((item: Product) => {
             const quantity =
               cartItems.find((i) => i.id === item.id)?.quantity ?? 0;
 
             return (
-              <motion.article
+              <article
                 key={item.id}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                data-aos="fade-up"
                 className="group bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-none hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-white/20 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-4 p-3 sm:p-4"
               >
                 {/* Gambar kecil */}
@@ -196,14 +183,14 @@ const ProductSection = ({
                     +
                   </button>
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>
 
         {/* Load More Button */}
         {visibleCount < filteredMenu.length && (
-          <div className="flex justify-center mt-10">
+          <div data-aos="fade-up" className="flex justify-center mt-10">
             <button
               onClick={() => setVisibleCount((prev) => prev + 5)}
               className="flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-md text-amber-50 border border-white/10 font-bold text-sm rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:border-amber-500/50 hover:text-amber-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden group"

@@ -1,4 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Routes, Route } from "react-router";
 import "./App.css";
 import HomePage from "./pages/HomePage";
@@ -11,6 +13,10 @@ import { addItem, removeItem, getTotalItem } from "./utils/cartUtils";
 import type { Product } from "./data/Menu";
 
 function App() {
+  useEffect(() => {
+    AOS.init({ once: true, duration: 600, easing: "ease-out-cubic", offset: 100 });
+  }, []);
+
   // CartState berbasis array CartItem[]
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 

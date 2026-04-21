@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Leaf, Award, Clock } from "lucide-react";
 
 const features = [
@@ -40,11 +39,8 @@ const AboutSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Gambar */}
-          <motion.div
-            initial={{ x: -60, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+          <div
+            data-aos="fade-right"
             className="w-full lg:w-1/2 relative"
           >
             {/* Decorative frame */}
@@ -63,14 +59,12 @@ const AboutSection = () => {
                 Cita Rasa Otentik
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Teks */}
-          <motion.div
-            initial={{ x: 60, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+          <div
+            data-aos="fade-left"
+            data-aos-delay="150"
             className="w-full lg:w-1/2"
           >
             <span className="inline-block text-xs font-semibold text-amber-300 bg-amber-900/30 border border-amber-500/20 px-3 py-1 rounded-full mb-4 tracking-wide uppercase">
@@ -110,7 +104,7 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

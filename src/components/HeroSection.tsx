@@ -1,23 +1,4 @@
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
 import { ArrowRight, Coffee } from "lucide-react";
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.18, delayChildren: 0.15 } as never,
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { y: 24, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } as never,
-  },
-};
 
 const HeroSection = () => {
   return (
@@ -42,39 +23,39 @@ const HeroSection = () => {
       <div className="absolute bottom-20 left-[25%] w-1.5 h-1.5 rounded-full bg-amber-400/60 pointer-events-none hidden sm:block" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-24 text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div>
           {/* Badge */}
-          <motion.div
-            variants={itemVariants}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="0"
             className="inline-flex items-center gap-2 bg-amber-900/30 bg-clip-padding backdrop-blur-sm border border-amber-500/30 shadow-[0_0_15px_rgba(217,119,6,0.15)] text-amber-200 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
           >
             <Coffee className="w-3.5 h-3.5 text-amber-400" />
             <span>Specialty Coffee · Mataram, NTB</span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            variants={itemVariants}
+          <h1
+            data-aos="fade-up"
+            data-aos-delay="100"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-amber-50 leading-[1.15] tracking-tight"
           >
             Momen Spesial
             <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-200 via-amber-400 to-amber-600 drop-shadow-[0_2px_10px_rgba(251,191,36,0.2)]">Dimulai Dari Sini</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
+          <p
+            data-aos="fade-up"
+            data-aos-delay="200"
             className="mt-6 text-base sm:text-lg text-stone-400 max-w-xl mx-auto leading-relaxed"
           >
             Biji kopi pilihan Nusantara, diseduh oleh barista berpengalaman.
             Setiap tegukan membawa cerita yang tak terlupakan.
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={itemVariants}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
             className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
           >
             <a
@@ -91,11 +72,12 @@ const HeroSection = () => {
             >
               Tentang Kami
             </a>
-          </motion.div>
+          </div>
 
           {/* Stats */}
-          <motion.div
-            variants={itemVariants}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="400"
             className="mt-14 sm:mt-16 flex flex-wrap justify-center gap-8 sm:gap-16"
           >
             {[
@@ -115,8 +97,8 @@ const HeroSection = () => {
                 </p>
               </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

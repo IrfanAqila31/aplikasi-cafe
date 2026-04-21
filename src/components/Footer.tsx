@@ -1,13 +1,9 @@
-import { motion } from "framer-motion";
 import { Mail, Phone, MessageSquare, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
+    <footer
+      data-aos="fade-up"
       className="bg-[#231106] text-stone-400 border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-8">
@@ -98,7 +94,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 

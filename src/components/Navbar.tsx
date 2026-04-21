@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface NavbarProps {
   totalItem?: number;
@@ -39,10 +38,8 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <header
+        data-aos="fade-down"
         className="sticky top-0 z-50 bg-[#31170a]/80 backdrop-blur-lg border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
@@ -172,28 +169,19 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       {/* Mobile Dropdown */}
-      <AnimatePresence>
-        {menuOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.15 }}
-              className="md:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
-              onClick={() => setMenuOpen(false)}
-            />
-            <motion.div
-              initial={{ opacity: 0, y: -8, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -8, scale: 0.97 }}
-              transition={{ duration: 0.18 }}
-              className="md:hidden fixed top-[62px] left-3 right-3 z-40 rounded-2xl border border-white/10 bg-[#3d1d0c]/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
-            >
-              <ul className="px-2 py-2 flex flex-col gap-0.5">
+      {menuOpen && (
+        <>
+          <div
+            className="md:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+            onClick={() => setMenuOpen(false)}
+          />
+          <div
+            className="md:hidden fixed top-[62px] left-3 right-3 z-40 rounded-2xl border border-white/10 bg-[#3d1d0c]/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+          >
+            <ul className="px-2 py-2 flex flex-col gap-0.5">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <a
@@ -205,11 +193,10 @@ const Navbar = ({ totalItem = 0 }: NavbarProps) => {
                     </a>
                   </li>
                 ))}
-              </ul>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            </ul>
+          </div>
+        </>
+      )}
     </>
   );
 };

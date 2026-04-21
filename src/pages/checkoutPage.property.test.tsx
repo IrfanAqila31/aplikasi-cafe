@@ -161,8 +161,8 @@ describe("Property 10: Total di CheckoutPage sama dengan totalHarga", () => {
 
         const { unmount } = renderCheckoutPage(cartItems);
 
-        // Cari semua span dengan class text-2xl (total display)
-        const totalSpans = document.querySelectorAll("span.text-2xl");
+        // Cari semua span dengan class yang mengandung text-2xl (total display)
+        const totalSpans = Array.from(document.querySelectorAll("span")).filter(span => span.className && typeof span.className === 'string' && span.className.includes("text-2xl"));
 
         let totalDisplayed = -1;
         totalSpans.forEach((span) => {
