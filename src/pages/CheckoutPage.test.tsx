@@ -41,6 +41,7 @@ function renderCheckoutPage(
         cartItems={cartItems}
         onAddItem={onAddItem ?? vi.fn()}
         onRemoveItem={onRemoveItem ?? vi.fn()}
+        onClearCart={vi.fn()}
       />
     </MemoryRouter>,
   );
