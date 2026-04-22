@@ -116,7 +116,7 @@ describe("Property 5: Quantity yang ditampilkan di ProductCard sinkron dengan Ca
 describe("Property 6: Tombol minus di ProductCard disabled saat quantity 0", () => {
   it("tombol − memiliki atribut disabled saat quantity produk adalah 0", () => {
     fc.assert(
-      fc.property(productArb, (_product) => {
+      fc.property(productArb, () => {
         // Semua produk memiliki quantity 0 (cartItems kosong)
         const cartItems: CartItem[] = [];
 
